@@ -10,8 +10,15 @@ const PORT = process.env.PORT || 5000;
 const JWT_SECRET = 'your-secret-key-change-in-production';
 
 // Middleware
-app.use(cors());
+// Middleware
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://your-production-domain.com'], // Replace with production domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
 app.use(express.json());
+app.options('*', cors());
 
 // Email configuration (SMTP2GO) - FIXED: createTransport instead of createTransporter
 const emailTransporter = nodemailer.createTransport({
