@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 const JWT_SECRET = 'your-secret-key-change-in-production';
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://resplendent-begonia-c4fef3.netlify.app'], // Replace with production domain
+  origin: ['http://localhost:3000', 'https://neurodesk-backend-i4ow.onrender.com'], // Replace with production domain
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
